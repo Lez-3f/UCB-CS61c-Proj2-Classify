@@ -17,9 +17,9 @@ main:
     # Set vector attributes
     mv a0, s0
     mv a1, s1
-    li a2, 3
+    li a2, 2
     li a3, 1
-    li a4, 2
+    li a4, 4
 
     # Call dot function
     jal ra, dot
