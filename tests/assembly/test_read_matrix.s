@@ -2,7 +2,7 @@
 .import ../../src/utils.s
 
 .data
-file_path: .asciiz "tests/inputs/test_read_matrix/test_input.bin"
+file_path: .asciiz "/tests/inputs/test_read_matrix/test_input.bin"
 row: .word 0
 col: .word 0
 
