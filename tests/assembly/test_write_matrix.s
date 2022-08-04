@@ -8,6 +8,14 @@ file_path: .asciiz "outputs/test_write_matrix/student_write_outputs.bin"
 .text
 main:
     # Write the matrix to a file
+    la s0, m0
+    la s1, file_path
 
+    mv a0, s1
+    mv a1, m0
+    li a2, 3
+    li a3, 3
+    jal ra, write_matrix
 
     # Exit the program
+    jal exit
