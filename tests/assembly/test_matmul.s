@@ -17,18 +17,18 @@ main:
 
     # Call matrix multiply, m0 * m1
     mv a0, s0
-    li a1, 4
-    li a2, 2
+    li a1, 3
+    li a2, 3
     mv a3, s1
-    li a4, 2
-    li a5, 4
+    li a4, 3
+    li a5, 1
     mv a6, s2
     jal ra, matmul
 
     # Print the output (use print_int_array in utils.s)
     mv a0, s2
-    li a1, 4
-    li a2, 4
+    li a1, 3
+    li a2, 1
     jal ra, print_int_array
 
     # Exit the program

@@ -15,8 +15,15 @@ byte_header = bytearray(header_arr)
 outfile.write(byte_header)
 
 ## Read in BMP file, differentiating between white pixels (r = g = b = 0xff) and non-white pixels
-ff_byte = '0xFF'
-ff_ba = bytearray([int(ff_byte, 16)])
+# ff_byte = '0xFF'
+# ff_ba = bytearray([int(ff_byte, 16)])
+
+f_byte = '0x7F'
+f_ba = bytearray([int(f_byte, 16)])
+
+# zero_byte = '0x00'
+# zero_ba = bytearray([int(zero_byte, 16)])
+
 toprint = ""
 line = []
 all_lines = []
@@ -24,10 +31,21 @@ while index < 784:
     r = infile.read(1)
     b = infile.read(1)
     g = infile.read(1)
-    if (r == ff_ba and b == ff_ba and g == ff_ba):
+    # if (r == ff_ba and b == ff_ba and g == ff_ba):
+    #     line.append(" ")
+    # else: 
+    #     line.append("*")
+
+    if (r > f_ba and b > f_ba and g > f_ba):
         line.append(" ")
     else: 
         line.append("*")
+
+    # if (r == zero_ba and b == zero_ba and g == zero_ba):
+    #     line.append("*")
+    # else: 
+    #     line.append(" ")
+
     index = index + 1
     if (index % 28 == 0):
         all_lines.append(line)

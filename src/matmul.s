@@ -53,7 +53,33 @@ matmul:
     mv s5, a5
     mv s6, a6
 
-    # li t0, 0    # i = 0 not correct
+    # for debug begin
+    mv a1, s1
+    jal print_int
+
+    li a1, 'x'
+    jal print_char
+
+    mv a1, s2
+    jal print_int
+
+    li a1, '|'
+    jal print_char
+
+    mv a1, s4
+    jal print_int
+
+    li a1, 'x'
+    jal print_char
+
+    mv a1, s5
+    jal print_int
+
+    li a1, '\n'
+    jal print_char
+    # for debug end
+
+    li t0, 0    # i = 0 not correct
     li s7, 0
     
 outer_loop_start:

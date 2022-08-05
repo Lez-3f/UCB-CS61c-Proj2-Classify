@@ -4,7 +4,7 @@ import sys
 ## It will look at "mnist_input<number>.txt", e.g. "mnist_input5.txt"
 
 ## Open the .txt version of the input file and add all lines to an array
-file = open("inputs/mnist_input" + sys.argv[1] + ".txt", "r")
+file = open("tests/inputs/mnist/txt/inputs/mnist_input" + sys.argv[1] + ".txt", "r")
 lines = []
 for line in file:
     lines.append(line)
@@ -23,7 +23,7 @@ while index < 784:
         toprint = toprint + "\n"
 
 ## Check what this input file is classified as
-classified_as = open("./labels/label" + sys.argv[1] + ".txt", "r")
+classified_as = open("tests/inputs/mnist/txt/labels/label" + sys.argv[1] + ".txt", "r")
 number_classified = str(classified_as.read())
 
 ## Print the image as ASCII art
